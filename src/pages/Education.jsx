@@ -22,7 +22,7 @@ const Education = () => {
     {
       title: "High School (10th Grade)",
       subtitle: "Saraswati Gyan Mandir",
-      date: "2016 - 2017",
+      date: "2015 - 2016",
       description: "Completed with 91.17% marks. Received recognition for academic excellence.",
       icon: FiBookOpen,
     },
