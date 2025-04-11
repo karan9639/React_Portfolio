@@ -1,4 +1,4 @@
-import { FiGithub, FiLinkedin, FiMail, FiPhone } from "react-icons/fi"
+import { FiGithub, FiLinkedin, FiMail, FiPhone } from "react-icons/fi";
 
 const Footer = () => {
   return (
@@ -6,12 +6,14 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-4 md:mb-0">
-            <p className="text-center md:text-left">© {new Date().getFullYear()} Karan Singh. All rights reserved.</p>
+            <p className="text-center md:text-left">
+              © {new Date().getFullYear()} Karan Singh. All rights reserved.
+            </p>
           </div>
 
           <div className="flex space-x-4">
             <a
-              href="https://github.com/"
+              href="https://github.com/karan9639"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-600 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-500 transition-colors"
@@ -20,7 +22,7 @@ const Footer = () => {
               <FiGithub size={20} />
             </a>
             <a
-              href="https://linkedin.com/"
+              href="https://www.linkedin.com/in/karan-singh-20889a221/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-600 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-500 transition-colors"
@@ -46,7 +48,7 @@ const Footer = () => {
         </div>
       </div>
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;

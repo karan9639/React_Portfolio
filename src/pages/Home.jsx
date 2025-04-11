@@ -1,21 +1,27 @@
-"use client"
+"use client";
 
-import { useRef } from "react"
-import { Link } from "react-router-dom"
-import { motion } from "framer-motion"
-import { FiGithub, FiLinkedin, FiMail, FiDownload, FiArrowDown } from "react-icons/fi"
+import { useRef } from "react";
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import {
+  FiGithub,
+  FiLinkedin,
+  FiMail,
+  FiDownload,
+  FiArrowDown,
+} from "react-icons/fi";
 
 const Home = () => {
-  const scrollRef = useRef(null)
+  const scrollRef = useRef(null);
 
   const scrollToNextSection = () => {
     if (scrollRef.current) {
-      scrollRef.current.scrollIntoView({ behavior: "smooth" })
+      scrollRef.current.scrollIntoView({ behavior: "smooth" });
     }
-  }
+  };
 
   // Typing animation for the job title
-  const jobTitle = "Software Engineer"
+  const jobTitle = "Software Engineer";
   const titleVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -24,7 +30,7 @@ const Home = () => {
         staggerChildren: 0.1,
       },
     },
-  }
+  };
 
   const letterVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -33,7 +39,7 @@ const Home = () => {
       y: 0,
       transition: { duration: 0.3 },
     },
-  }
+  };
 
   return (
     <>
@@ -64,13 +70,13 @@ const Home = () => {
               </motion.h2>
 
               <p className="text-gray-600 dark:text-gray-400 mb-8 max-w-lg mx-auto md:mx-0">
-                Passionate about creating efficient, user-friendly applications with modern technologies. Based in Agra,
-                Uttar Pradesh, India.
+                Passionate about creating efficient, user-friendly applications
+                with modern technologies. Based in Agra, Uttar Pradesh, India.
               </p>
 
               <div className="flex flex-wrap gap-4 justify-center md:justify-start">
                 <a
-                  href="https://github.com/"
+                  href="https://github.com/karan9639"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 bg-gray-800 hover:bg-gray-900 text-white px-4 py-2 rounded-md transition-colors"
@@ -79,7 +85,7 @@ const Home = () => {
                   <FiGithub /> GitHub
                 </a>
                 <a
-                  href="https://linkedin.com/"
+                  href="https://www.linkedin.com/in/karan-singh-20889a221/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md transition-colors"
@@ -95,7 +101,7 @@ const Home = () => {
                   <FiMail /> Email
                 </a>
                 <a
-                  href="/resume.pdf"
+                  href="/Karan_Singh_Resume.pdf"
                   download
                   className="flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded-md transition-colors"
                   aria-label="Download Resume"
@@ -119,8 +125,8 @@ const Home = () => {
                   transition={{ duration: 0.3 }}
                 >
                   <img
-                    src="/placeholder.svg?height=300&width=300"
-                    alt="Karan Singh"
+                    src="/karan.svg?height=300&width=300"
+                    alt="Karan"
                     className="w-full h-full object-cover"
                   />
                 </motion.div>
@@ -152,7 +158,8 @@ const Home = () => {
             >
               <h2 className="text-3xl md:text-4xl font-bold mb-4">What I Do</h2>
               <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-                I specialize in building modern web applications using the latest technologies and best practices.
+                I specialize in building modern web applications using the
+                latest technologies and best practices.
               </p>
             </motion.div>
 
@@ -182,7 +189,8 @@ const Home = () => {
                 </div>
                 <h3 className="text-xl font-bold mb-2">Web Development</h3>
                 <p className="text-gray-600 dark:text-gray-400">
-                  Building responsive and performant web applications using modern frameworks and libraries.
+                  Building responsive and performant web applications using
+                  modern frameworks and libraries.
                 </p>
               </motion.div>
 
@@ -211,7 +219,8 @@ const Home = () => {
                 </div>
                 <h3 className="text-xl font-bold mb-2">Database Design</h3>
                 <p className="text-gray-600 dark:text-gray-400">
-                  Designing and implementing efficient database structures for optimal data management.
+                  Designing and implementing efficient database structures for
+                  optimal data management.
                 </p>
               </motion.div>
 
@@ -240,7 +249,8 @@ const Home = () => {
                 </div>
                 <h3 className="text-xl font-bold mb-2">Problem Solving</h3>
                 <p className="text-gray-600 dark:text-gray-400">
-                  Solving complex problems with efficient algorithms and data structures.
+                  Solving complex problems with efficient algorithms and data
+                  structures.
                 </p>
               </motion.div>
             </div>
@@ -257,7 +267,7 @@ const Home = () => {
         </section>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

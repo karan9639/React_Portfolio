@@ -26,9 +26,9 @@ const Achievements = () => {
     },
     {
       icon: FiAward,
-      title: "Hackathon Winner",
+      title: "UPSEE 2020 Rank 5652",
       description:
-        "Won first place in a college-level hackathon for developing an innovative solution to a real-world problem.",
+        "Secured a rank of 5652 in the Uttar Pradesh State Entrance Examination, gaining admission to a reputable engineering college.",
     },
     {
       icon: FiCode,

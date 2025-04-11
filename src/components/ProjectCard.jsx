@@ -1,10 +1,11 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { FiGithub, FiExternalLink } from "react-icons/fi"
+import { motion } from "framer-motion";
+import { FiGithub, FiExternalLink } from "react-icons/fi";
 
 const ProjectCard = ({ project }) => {
-  const { title, description, image, technologies, githubUrl, liveUrl } = project
+  const { title, description, image, technologies, githubUrl, liveUrl } =
+    project;
 
   return (
     <motion.div
@@ -17,7 +18,7 @@ const ProjectCard = ({ project }) => {
     >
       <div className="relative overflow-hidden h-48">
         <img
-          src={image || "/placeholder.svg"}
+          src={image || "/karan.svg"}
           alt={title}
           className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
         />
@@ -65,7 +66,7 @@ const ProjectCard = ({ project }) => {
         </div>
       </div>
     </motion.div>
-  )
-}
+  );
+};
 
-export default ProjectCard
+export default ProjectCard;

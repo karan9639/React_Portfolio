@@ -7,21 +7,21 @@ const Education = () => {
     {
       title: "Bachelor of Technology in Computer Science",
       subtitle: "ABES Engineering College",
-      date: "2019 - 2023",
+      date: "2020 - 2024",
       description:
         "Graduated with a CGPA of 7.22. Focused on core computer science subjects, data structures, algorithms, and web development.",
       icon: FiBookOpen,
     },
     {
       title: "Intermediate (12th Grade)",
-      subtitle: "St. John's Sr. Sec. School",
-      date: "2017 - 2019",
+      subtitle: "Shri Salig Ram Inter College",
+      date: "2018 - 2019",
       description: "Completed with 76% marks. Studied Physics, Chemistry, Mathematics, and Computer Science.",
       icon: FiBookOpen,
     },
     {
       title: "High School (10th Grade)",
-      subtitle: "St. John's Sr. Sec. School",
+      subtitle: "Saraswati Gyan Mandir",
       date: "2016 - 2017",
       description: "Completed with 91.17% marks. Received recognition for academic excellence.",
       icon: FiBookOpen,
@@ -30,27 +30,45 @@ const Education = () => {
 
   const certifications = [
     {
-      title: "Web Development Bootcamp",
-      subtitle: "Udemy",
-      date: "Dec 2021",
-      description: "Comprehensive course covering HTML, CSS, JavaScript, Node.js, Express, and MongoDB.",
-      icon: FiAward,
-    },
-    {
       title: "React - The Complete Guide",
       subtitle: "Udemy",
-      date: "Mar 2022",
-      description: "In-depth course on React.js, Redux, React Router, and related technologies.",
+      date: "Feb 2024",
+      description:
+        "In-depth course on React.js, Redux, React Router, and related technologies.",
       icon: FiAward,
     },
     {
-      title: "Data Structures and Algorithms",
-      subtitle: "Coursera",
-      date: "Aug 2022",
-      description: "Course on fundamental data structures and algorithms with practical implementations.",
+      title: "C/C++ Programming",
+      subtitle: "SoloLearn",
+      date: "Nov 2022",
+      description:
+        "Fundamentals of computer networks, protocols, and network security.",
       icon: FiAward,
     },
-  ]
+    {
+      title: "Computer Networks",
+      subtitle: "CCNA",
+      date: "June 2023",
+      description:
+        "Fundamentals of computer networks, protocols, and network security.",
+      icon: FiAward,
+    },
+    {
+      title: "Python",
+      subtitle: "CCNA",
+      date: "June 2023",
+      description:
+        "basics of Python programming, data structures, and algorithms.",
+      icon: FiAward,
+    },
+    {
+      title: "SQL",
+      subtitle: "HackerRank",
+      date: "Feb 2023",
+      description: "Proficient in SQL queries, joins, and database management.",
+      icon: FiAward,
+    },
+  ];
 
   return (
     <section className="py-20 px-4">

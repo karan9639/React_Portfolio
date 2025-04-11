@@ -1,20 +1,20 @@
-"use client"
+"use client";
 
-import { useState, useContext, useEffect } from "react"
-import { Link, useLocation } from "react-router-dom"
-import { motion } from "framer-motion"
-import { FiMenu, FiX, FiMoon, FiSun, FiDownload } from "react-icons/fi"
-import { ThemeContext } from "../context/ThemeContext"
+import { useState, useContext, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { motion } from "framer-motion";
+import { FiMenu, FiX, FiMoon, FiSun, FiDownload } from "react-icons/fi";
+import { ThemeContext } from "../context/ThemeContext";
 
 const Header = () => {
-  const [isOpen, setIsOpen] = useState(false)
-  const { darkMode, toggleTheme } = useContext(ThemeContext)
-  const location = useLocation()
+  const [isOpen, setIsOpen] = useState(false);
+  const { darkMode, toggleTheme } = useContext(ThemeContext);
+  const location = useLocation();
 
   // Close mobile menu when route changes
   useEffect(() => {
-    setIsOpen(false)
-  }, [location])
+    setIsOpen(false);
+  }, [location]);
 
   const navLinks = [
     { name: "Home", path: "/" },
@@ -25,7 +25,7 @@ const Header = () => {
     { name: "Education", path: "/education" },
     { name: "Achievements", path: "/achievements" },
     { name: "Contact", path: "/contact" },
-  ]
+  ];
 
   return (
     <header className="sticky top-0 z-50 bg-white dark:bg-gray-800 shadow-sm">
@@ -39,7 +39,11 @@ const Header = () => {
           >
             K
           </motion.span>
-          <motion.span initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5, delay: 0.1 }}>
+          <motion.span
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+          >
             aran Singh
           </motion.span>
         </Link>
@@ -51,7 +55,9 @@ const Header = () => {
               key={link.name}
               to={link.path}
               className={`hover:text-emerald-600 transition-colors ${
-                location.pathname === link.path ? "text-emerald-600 font-medium" : ""
+                location.pathname === link.path
+                  ? "text-emerald-600 font-medium"
+                  : ""
               }`}
             >
               {link.name}
@@ -59,7 +65,7 @@ const Header = () => {
           ))}
 
           <a
-            href="/resume.pdf"
+            href="/Karan_Singh_Resume.pdf"
             download
             className="flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded-md transition-colors"
           >
@@ -69,7 +75,9 @@ const Header = () => {
           <button
             onClick={toggleTheme}
             className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
-            aria-label={darkMode ? "Switch to light mode" : "Switch to dark mode"}
+            aria-label={
+              darkMode ? "Switch to light mode" : "Switch to dark mode"
+            }
           >
             {darkMode ? <FiSun className="text-yellow-400" /> : <FiMoon />}
           </button>
@@ -80,7 +88,9 @@ const Header = () => {
           <button
             onClick={toggleTheme}
             className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
-            aria-label={darkMode ? "Switch to light mode" : "Switch to dark mode"}
+            aria-label={
+              darkMode ? "Switch to light mode" : "Switch to dark mode"
+            }
           >
             {darkMode ? <FiSun className="text-yellow-400" /> : <FiMoon />}
           </button>
@@ -110,7 +120,9 @@ const Header = () => {
                 key={link.name}
                 to={link.path}
                 className={`block py-2 hover:text-emerald-600 transition-colors ${
-                  location.pathname === link.path ? "text-emerald-600 font-medium" : ""
+                  location.pathname === link.path
+                    ? "text-emerald-600 font-medium"
+                    : ""
                 }`}
               >
                 {link.name}
@@ -118,7 +130,7 @@ const Header = () => {
             ))}
 
             <a
-              href="/resume.pdf"
+              href="/Karan_Singh_Resume.pdf"
               download
               className="flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded-md transition-colors"
             >
@@ -128,7 +140,7 @@ const Header = () => {
         </motion.div>
       )}
     </header>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

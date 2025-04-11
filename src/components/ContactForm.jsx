@@ -1,8 +1,13 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { motion } from "framer-motion"
-import { FiSend } from "react-icons/fi"
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { FiSend } from "react-icons/fi";
+import emailjs from "@emailjs/browser";
+
+const SERVICE_ID = "service_jc2jn2n";
+const TEMPLATE_ID = "template_p00c4lf";
+const PUBLIC_KEY = "Bkl0PzleHiXrBH7uN";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -10,62 +15,72 @@ const ContactForm = () => {
     email: "",
     subject: "",
     message: "",
-  })
+  });
 
-  const [errors, setErrors] = useState({})
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [submitSuccess, setSubmitSuccess] = useState(false)
+  const [errors, setErrors] = useState({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitSuccess, setSubmitSuccess] = useState(false);
 
   const validate = () => {
-    const newErrors = {}
+    const newErrors = {};
 
     if (!formData.name.trim()) {
-      newErrors.name = "Name is required"
+      newErrors.name = "Name is required";
     }
 
     if (!formData.email.trim()) {
-      newErrors.email = "Email is required"
+      newErrors.email = "Email is required";
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      newErrors.email = "Email is invalid"
+      newErrors.email = "Email is invalid";
     }
 
     if (!formData.message.trim()) {
-      newErrors.message = "Message is required"
+      newErrors.message = "Message is required";
     }
 
-    setErrors(newErrors)
-    return Object.keys(newErrors).length === 0
-  }
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
 
   const handleChange = (e) => {
-    const { name, value } = e.target
-    setFormData({ ...formData, [name]: value })
-  }
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
 
   const handleSubmit = (e) => {
-    e.preventDefault()
+    e.preventDefault();
 
     if (validate()) {
-      setIsSubmitting(true)
+      setIsSubmitting(true);
 
-      // Simulate form submission
-      setTimeout(() => {
-        setIsSubmitting(false)
-        setSubmitSuccess(true)
-        setFormData({
-          name: "",
-          email: "",
-          subject: "",
-          message: "",
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+        to_name: "Kvs Raj",
+      };
+
+      emailjs
+        .send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY)
+        .then(() => {
+          setIsSubmitting(false);
+          setSubmitSuccess(true);
+          setFormData({
+            name: "",
+            email: "",
+            subject: "",
+            message: "",
+          });
+
+          setTimeout(() => setSubmitSuccess(false), 5000);
         })
-
-        // Reset success message after 5 seconds
-        setTimeout(() => {
-          setSubmitSuccess(false)
-        }, 5000)
-      }, 1500)
+        .catch((error) => {
+          console.error("Email send error:", error);
+          setIsSubmitting(false);
+        });
     }
-  }
+  };
 
   return (
     <motion.div
@@ -86,7 +101,9 @@ const ContactForm = () => {
             <FiSend className="text-green-600 dark:text-green-400 text-2xl" />
           </motion.div>
           <h3 className="text-xl font-bold mb-2">Message Sent!</h3>
-          <p className="text-gray-600 dark:text-gray-400">Thank you for reaching out. I'll get back to you soon.</p>
+          <p className="text-gray-600 dark:text-gray-400">
+            Thank you for reaching out. I'll get back to you soon.
+          </p>
         </div>
       ) : (
         <form onSubmit={handleSubmit}>
@@ -101,11 +118,17 @@ const ContactForm = () => {
               value={formData.name}
               onChange={handleChange}
               className={`w-full px-4 py-2 rounded-md border ${
-                errors.name ? "border-red-500 dark:border-red-400" : "border-gray-300 dark:border-gray-600"
+                errors.name
+                  ? "border-red-500 dark:border-red-400"
+                  : "border-gray-300 dark:border-gray-600"
               } bg-white dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-emerald-500`}
               placeholder="Your name"
             />
-            {errors.name && <p className="text-red-500 dark:text-red-400 text-xs mt-1">{errors.name}</p>}
+            {errors.name && (
+              <p className="text-red-500 dark:text-red-400 text-xs mt-1">
+                {errors.name}
+              </p>
+            )}
           </div>
 
           <div className="mb-4">
@@ -119,11 +142,17 @@ const ContactForm = () => {
               value={formData.email}
               onChange={handleChange}
               className={`w-full px-4 py-2 rounded-md border ${
-                errors.email ? "border-red-500 dark:border-red-400" : "border-gray-300 dark:border-gray-600"
+                errors.email
+                  ? "border-red-500 dark:border-red-400"
+                  : "border-gray-300 dark:border-gray-600"
               } bg-white dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-emerald-500`}
               placeholder="Your email"
             />
-            {errors.email && <p className="text-red-500 dark:text-red-400 text-xs mt-1">{errors.email}</p>}
+            {errors.email && (
+              <p className="text-red-500 dark:text-red-400 text-xs mt-1">
+                {errors.email}
+              </p>
+            )}
           </div>
 
           <div className="mb-4">
@@ -152,11 +181,17 @@ const ContactForm = () => {
               onChange={handleChange}
               rows="5"
               className={`w-full px-4 py-2 rounded-md border ${
-                errors.message ? "border-red-500 dark:border-red-400" : "border-gray-300 dark:border-gray-600"
+                errors.message
+                  ? "border-red-500 dark:border-red-400"
+                  : "border-gray-300 dark:border-gray-600"
               } bg-white dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-emerald-500`}
               placeholder="Your message"
             />
-            {errors.message && <p className="text-red-500 dark:text-red-400 text-xs mt-1">{errors.message}</p>}
+            {errors.message && (
+              <p className="text-red-500 dark:text-red-400 text-xs mt-1">
+                {errors.message}
+              </p>
+            )}
           </div>
 
           <button
@@ -174,7 +209,14 @@ const ContactForm = () => {
                   fill="none"
                   viewBox="0 0 24 24"
                 >
-                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                  <circle
+                    className="opacity-25"
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    stroke="currentColor"
+                    strokeWidth="4"
+                  ></circle>
                   <path
                     className="opacity-75"
                     fill="currentColor"
@@ -192,7 +234,7 @@ const ContactForm = () => {
         </form>
       )}
     </motion.div>
-  )
-}
+  );
+};
 
-export default ContactForm
+export default ContactForm;

@@ -1,9 +1,15 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { FiMapPin, FiMail, FiPhone, FiGithub, FiLinkedin } from "react-icons/fi"
-import SectionTitle from "../components/SectionTitle"
-import ContactForm from "../components/ContactForm"
+import { motion } from "framer-motion";
+import {
+  FiMapPin,
+  FiMail,
+  FiPhone,
+  FiGithub,
+  FiLinkedin,
+} from "react-icons/fi";
+import SectionTitle from "../components/SectionTitle";
+import ContactForm from "../components/ContactForm";
 
 const Contact = () => {
   const contactInfo = [
@@ -27,16 +33,16 @@ const Contact = () => {
     {
       icon: FiGithub,
       title: "GitHub",
-      details: "github.com/username",
-      link: "https://github.com/",
+      details: "github.com/karan9639",
+      link: "https://github.com/karan9639",
     },
     {
       icon: FiLinkedin,
       title: "LinkedIn",
-      details: "linkedin.com/in/username",
-      link: "https://linkedin.com/",
+      details: "linkedin.com/in/karan-singh-20889a221",
+      link: "https://www.linkedin.com/in/karan-singh-20889a221/",
     },
-  ]
+  ];
 
   return (
     <section className="py-20 px-4">
@@ -75,13 +81,21 @@ const Contact = () => {
                       <a
                         href={info.link}
                         className="text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-500 transition-colors"
-                        target={info.link.startsWith("http") ? "_blank" : undefined}
-                        rel={info.link.startsWith("http") ? "noopener noreferrer" : undefined}
+                        target={
+                          info.link.startsWith("http") ? "_blank" : undefined
+                        }
+                        rel={
+                          info.link.startsWith("http")
+                            ? "noopener noreferrer"
+                            : undefined
+                        }
                       >
                         {info.details}
                       </a>
                     ) : (
-                      <p className="text-gray-600 dark:text-gray-400">{info.details}</p>
+                      <p className="text-gray-600 dark:text-gray-400">
+                        {info.details}
+                      </p>
                     )}
                   </div>
                 </motion.div>
@@ -92,7 +106,7 @@ const Contact = () => {
               <h3 className="text-xl font-bold mb-4">Follow Me</h3>
               <div className="flex space-x-4">
                 <a
-                  href="https://github.com/"
+                  href="https://github.com/karan9639"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center text-gray-700 dark:text-gray-300 hover:bg-emerald-600 hover:text-white dark:hover:bg-emerald-600 transition-colors"
@@ -101,7 +115,7 @@ const Contact = () => {
                   <FiGithub />
                 </a>
                 <a
-                  href="https://linkedin.com/"
+                  href="https://www.linkedin.com/in/karan-singh-20889a221/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center text-gray-700 dark:text-gray-300 hover:bg-emerald-600 hover:text-white dark:hover:bg-emerald-600 transition-colors"
@@ -126,7 +140,7 @@ const Contact = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Contact
+export default Contact;
