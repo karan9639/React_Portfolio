@@ -4,70 +4,58 @@ import ProjectCard from "../components/ProjectCard";
 const Projects = () => {
   const projects = [
     {
-      title: "Portfolio Website Builder",
+      title: "Lab Recipe Management",
       description:
-        "A MERN stack application that allows users to create and customize their own portfolio websites with various templates and components.",
-      image: "/karan.svg?height=300&width=500",
-      technologies: ["React", "Node.js", "MongoDB", "Express", "Tailwind CSS"],
-      githubUrl: "https://github.com/karan9639",
-      liveUrl: "https://example.com/",
+        "A full-stack recipe management app where users can add, view, and organize recipes with a clean UI and backend support.",
+      image: "/images/lab.png",
+      technologies: ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
+      githubUrl: "https://github.com/karan9639/Lab",
+      liveUrl: "https://labrecipe.vercel.app/recipes",
     },
     {
-      title: "Restaurant Platform",
+      title: "Restaurant Website",
       description:
-        "A mobile-first web application for restaurants to showcase their menu, accept online orders, and manage reservations.",
-      image: "/karan.svg?height=300&width=500",
-      technologies: ["React", "React Router", "Styled Components", "Firebase"],
-      githubUrl: "https://github.com/karan9639",
-      liveUrl: "https://example.com/",
-    },
-    {
-      title: "Task Management System",
-      description:
-        "A comprehensive task management application with features like task assignment, progress tracking, and deadline notifications.",
-      image: "/karan.svg?height=300&width=500",
-      technologies: [
-        "JavaScript",
-        "Node.js",
-        "MongoDB",
-        "Express",
-        "Socket.io",
-      ],
-      githubUrl: "https://github.com/karan9639",
-      liveUrl: "https://example.com/",
-    },
-    {
-      title: "E-commerce Dashboard",
-      description:
-        "An admin dashboard for e-commerce platforms with analytics, inventory management, and order processing capabilities.",
-      image: "/karan.svg?height=300&width=500",
-      technologies: ["React", "Redux", "Material UI", "Chart.js", "Node.js"],
-      githubUrl: "https://github.com/karan9639",
-      liveUrl: "https://example.com/",
+        "A modern, mobile-first restaurant website with a visually appealing menu and smooth user experience.",
+      image: "/images/restaurant.png",
+      technologies: ["React", "Styled Components", "Firebase"],
+      githubUrl: "https://github.com/karan9639/Restaurant",
+      liveUrl: "https://verma-restaurant.netlify.app/",
     },
     {
       title: "Weather Application",
       description:
-        "A weather forecast application that provides real-time weather data and forecasts for locations worldwide.",
-      image: "/karan.svg?height=300&width=500",
-      technologies: [
-        "JavaScript",
-        "HTML5",
-        "CSS3",
-        "Weather API",
-        "Geolocation API",
-      ],
-      githubUrl: "https://github.com/karan9639",
-      liveUrl: "https://example.com/",
+        "A sleek weather app that fetches real-time weather data using public APIs and shows forecast data.",
+      image: "/images/weather.png",
+      technologies: ["JavaScript", "HTML", "CSS", "Weather API"],
+      githubUrl: "https://github.com/karan9639/Weather-app",
+      liveUrl: "https://weather-kvs.netlify.app/",
     },
     {
-      title: "Chat Application",
+      title: "Todo App",
       description:
-        "A real-time chat application with features like private messaging, group chats, and file sharing.",
-      image: "/karan.svg?height=300&width=500",
-      technologies: ["React", "Socket.io", "Node.js", "Express", "MongoDB"],
-      githubUrl: "https://github.com/karan9639",
-      liveUrl: "https://example.com/",
+        "A simple and intuitive todo application to manage daily tasks with features like adding, deleting, and marking tasks as complete.",
+      image: "/images/todo.png",
+      technologies: ["React", "CSS", "LocalStorage"],
+      githubUrl: "https://github.com/karan9639/Todo-React",
+      liveUrl: "https://todo-kvs.netlify.app/",
+    },
+    {
+      title: "Unit Converter",
+      description:
+        "A responsive unit converter supporting various measurement types, built with a clean and interactive UI.",
+      image: "/images/converter.png",
+      technologies: ["React", "CSS", "JavaScript"],
+      githubUrl: "https://github.com/karan9639/Unit_Converter",
+      liveUrl: "https://converter-kvs.netlify.app/",
+    },
+    {
+      title: "Razorpay Clone",
+      description:
+        "A frontend clone of the Razorpay landing page built with Tailwind CSS, mimicking their design and animations.",
+      image: "/images/razorpay.png",
+      technologies: ["HTML", "Tailwind CSS", "JavaScript"],
+      githubUrl: "https://github.com/karan9639/RazorpayUsingTailwind",
+      liveUrl: "https://razorpay-kvs.netlify.app/",
     },
   ];
 
